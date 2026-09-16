@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanisha Kanthavel | Aspiring Physician & Surgeon</title>
+    <meta name="description" content="Portfolio of Tanisha Kanthavel, a Pre-Medical Honors dual-degree student at UNC Charlotte leveraging Artificial Intelligence to elevate patient outcomes and clinical biology.">
+    <style>
+        :root {
+            --primary: #030a16;
+            --secondary: rgba(14, 28, 54, 0.75);
+            --accent-blue: #3066be;
+            --accent-mint: #64ffda;
+            --text-main: #94a3b8;
+            --text-bright: #f8fafc;
+            --glow: rgba(100, 255, 218, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(48, 102, 190, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(100, 255, 218, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(14, 28, 54, 0.6) 0%, transparent 100%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--accent-mint);
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; gap: 2rem; margin: 2rem auto; }
+            .image-grid { order: -1; }
+        }
+
+        .hero-text h1 {
+            color: var(--text-bright);
+            font-size: 3.2rem;
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-text h2 {
+            color: var(--accent-mint);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .img-placeholder {
+            background: var(--secondary);
+            border: 2px dashed rgba(48, 102, 190, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            height: 270px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+            color: var(--text-bright);
+            font-size: 0.9rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .img-placeholder span {
+            color: var(--accent-mint);
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .section-title {
+            color: var(--text-bright);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent-blue), transparent);
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .about-box {
+            background: var(--secondary);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-mint);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .about-box p {
+            margin-bottom: 1.2rem;
+            font-size: 1.15rem;
+            color: #cbd5e1;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--secondary);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-mint);
+            box-shadow: 0 12px 40px 0 rgba(100, 255, 218, 0.15);
+        }
+
+        .card h3 {
+            color: var(--text-bright);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .card .institution {
+            color: var(--accent-mint);
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card ul {
+            list-style-type: none;
+        }
+
+        .card ul li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        .card ul li::before {
+            content: "🩺";
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+
+        .card.lab-card ul li::before {
+            content: "🔬";
+        }
+        .card.cs-card ul li::before {
+            content: "💻";
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(48, 102, 190, 0.25);
+            color: #60a5fa;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .badge-md {
+            background: rgba(100, 255, 218, 0.15);
+            color: var(--accent-mint);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .skills-container { grid-template-columns: 1fr; }
+        }
+
+        .skills-list {
+            background: var(--secondary);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .skills-list h3 {
+            color: var(--text-bright);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tag {
+            background: rgba(3, 10, 22, 0.5);
+            color: var(--text-bright);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(48, 102, 190, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            border-color: var(--accent-mint);
+            background: rgba(100, 255, 218, 0.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">T. Kanthavel</div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Aspiring Physician & Surgeon</h2>
+            <h1>Uplifting Patient Care Through Biological Research & Computational Synergy.</h1>
+            <p>CCI Honors College dual-degree pre-medical candidate at UNC Charlotte. Grounded in direct clinical operations and bench-science cell biology, utilizing artificial intelligence as a precise superpower to advance diagnostic efficacy and bedside patient outcomes.</p>
+        </div>
+        <div class="image-grid">
+            <div class="img-placeholder">
+                📸 Medical Headshot
+                <span>[Place Medical/Professional Photo Here]</span>
+            </div>
+            <div class="img-placeholder">
+                🔬 Direct Patient Care / Lab Photo
+                <span>[Place Hospital Floor or Wet-Lab Photo Here]</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="vision">
+        <h2 class="section-title">The Medical & Surgical Vision</h2>
+        <div class="about-box">
+            <p><strong>My Commitment to Patient-Centered Care:</strong> My long-term goal is to serve patients directly as a practicing physician and surgeon. True healing demands human empathy, fast clinical intuition, and direct mastery over biological systems. I believe that tomorrow's standard of healthcare will be fundamentally elevated by doctors who know how to wield modern data systems.</p>
+            <p>Rather than replacing real-world clinical intuition, my training in computer science serves to support my primary mission: optimizing treatment workflows, accelerating cellular pathological diagnoses, and identifying algorithmic healthcare disparities directly at the bedside to protect vulnerable patients.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional Requisite Pillars</h2>
+        <div class="grid-3">
+            
+            <div class="card">
+                <span class="badge badge-md">Bedside Clinical Operations</span>
+                <h3>Certified Nurse Aide (CNA)</h3>
+                <div class="institution">Frontline Patient Care Environment</div>
+                <ul>
+                    <li>Engaged on the absolute front lines of patient care, managing essential clinical floor protocols.</li>
+                    <li>Mastered safe triage support workflows, active patient communication, and exact vital sign analytics.</li>
+                    <li>Gained deep, practical insight into multi-disciplinary hospital floor operations and care realities.</li>
+                </ul>
+            </div>
+
+            <div class="card lab-card">
+                <span class="badge">Biomedical Discovery</span>
+                <h3>Undergraduate Researcher</h3>
+                <div class="institution">Cell Biology Research Lab, UNC Charlotte</div>
+                <ul>
+                    <li>Investigating fundamental cell biology pathways to trace and outline molecular disease behavior.</li>
+                    <li>Designing laboratory experiments to extract clear benchmarks from microscopic and structural patterns.</li>
+                    <li>Fusing computational data collection with live, high-fidelity biological assays to map cell structures.</li>
+                </ul>
+            </div>
+
+            <div class="card cs-card">
+                <span class="badge">Computational Synergy</span>
+                <h3>Instructional Assistant</h3>
+                <div class="institution">Computer Science Department, UNC Charlotte</div>
+                <ul>
+                    <li>Formulating frameworks to guide peer cohorts through foundational data structures and logical design patterns.</li>
+                    <li>Cultivating advanced technical mastery over software architectures to later apply toward clinical diagnostic data.</li>
+                    <li>Demonstrating powerful communication skills to translate abstract technical challenges into clear solutions.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Clinical & Technical Domain Matrix</h2>
+        <div class="skills-container">
+            
+            <div class="skills-list">
+                <h3>Biomedical & Care Competencies</h3>
+                <div class="skill-tags">
+                    <span class="tag">Patient Vitals & Direct Triaging</span>
+                    <span class="tag">Clinical Care Empathy Workflows</span>
+                    <span class="tag">Cell Culture & Assays</span>
+                    <span class="tag">HIPAA Regulation Compliance</span>
+                    <span class="tag">Microscopy & Cell Staining</span>
+                </div>
+            </div>
+
+            <div class="skills-list">
+                <h3>Computational Utility & Support Systems</h3>
+                <div class="skill-tags">
+                    <span class="tag">Python Data Pipelines</span>
+                    <span class="tag">Machine Learning Architectures</span>
+                    <span class="tag">Artificial Intelligence Concepts</span>
+                    <span class="tag">Data Structure Analytics</span>
+                    <span class="tag">Algorithmic Problem-Solving</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Academic Base</h2>
+        <div style="max-width: 600px;">
+            <div class="card" style="border-left: 4px solid var(--accent-blue);">
+                <div class="badge">Active Curriculum</div>
+                <h3>B.S. Computer Science (AI) & B.A. Biology</h3>
+                <div class="institution" style="margin-bottom: 0.5rem;">University of North Carolina at Charlotte</div>
+                <p style="color: #cbd5e1;">CCI Honors College. Chancellor’s List Recipient. Pre-Medical Track Candidate.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Tanisha Kanthavel. Tailored purposefully for Medical School Admissions Committees.</p>
+    </footer>
+
+</body>
+</html>
